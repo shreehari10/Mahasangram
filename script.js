@@ -4,7 +4,7 @@ const CONFIG = {
     API_BASE: 'https://opensheet.elk.sh',
     DEPARTMENTS: ['IT', 'MECH', 'CIVIL', 'A&R', 'COMP', 'AI&DS', 'MBA', 'ENTC', 'ECE', 'ELECT'],
     SPORTS: [
-        { name: 'Cricket', icon: '🏏' },
+       
         { name: 'Tug of War', icon: '🤝' },
         { name: 'Kho-Kho', icon: '🏃' },
         { name: 'Chess', icon: '♟️' },
