@@ -1,4 +1,3 @@
-// Configuration
 const CONFIG = {
     SHEET_ID: "1_jFRHiXdki9X6AihCc2ew9_qskSFnYXlNDpKnxsMIxA", // Replace with your Google Sheet ID
     API_BASE: 'https://opensheet.elk.sh',
@@ -17,7 +16,8 @@ const CONFIG = {
     ]
 };
 
-// Utility Functions
+
+
 function showLoading(element) {
     element.innerHTML = `
         <div class="data-loading">
@@ -43,7 +43,8 @@ async function fetchData(sheetName) {
     }
 }
 
-// HOME PAGE - Leaderboard
+
+
 async function initLeaderboard() {
     const container = document.getElementById('leaderboard-container');
     if (!container) return;
@@ -57,12 +58,14 @@ async function initLeaderboard() {
         return;
     }
 
-    // Sort by score descending
+
+    
     const sorted = [...data].sort((a, b) => {
         return (parseFloat(b.Score) || 0) - (parseFloat(a.Score) || 0);
     });
 
-    // Build table
+
+    
     let html = `
         <table class="leaderboard-table">
             <thead>
@@ -114,14 +117,17 @@ async function initLeaderboard() {
     container.innerHTML = html;
 }
 
-// SPORTS PAGE - Buttons and Results
+
+
 async function initSports() {
     const buttonsContainer = document.getElementById('sports-buttons-container');
     const resultsSection = document.getElementById('results-section');
     
     if (!buttonsContainer) return;
 
-    // Create sport buttons
+
+    
+    
     let html = '';
     CONFIG.SPORTS.forEach(sport => {
         html += `
@@ -133,25 +139,28 @@ async function initSports() {
     });
     buttonsContainer.innerHTML = html;
 
-    // Fetch all sports data once
+
+    
+    
     const allSportsData = await fetchData('Sports');
     if (!allSportsData) {
         resultsSection.innerHTML = '<div class="error-message">Unable to load sports data. Please check your Sheet ID.</div>';
         return;
     }
 
-    // Add click handlers to sport buttons
+
+    
+    
     document.querySelectorAll('.sport-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
+            // Remove active class 
             document.querySelectorAll('.sport-btn').forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+            // Add active class 
             btn.classList.add('active');
             
             const sport = btn.dataset.sport;
             displaySportResults(sport, allSportsData);
             
-            // Scroll to results
             resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
@@ -160,7 +169,9 @@ async function initSports() {
 function displaySportResults(sportName, allData) {
     const resultsSection = document.getElementById('results-section');
     
-    // Filter data for this sport
+
+    
+    
     const sportData = allData.filter(row => 
     row.Sport && row.Sport.trim().toLowerCase() === sportName.trim().toLowerCase()
 );
@@ -188,8 +199,7 @@ function displaySportResults(sportName, allData) {
     if (girlsData.length > 0) {
         html += buildResultsTable('Girls', girlsData);
     }
-
-    // If no data for either gender
+//if no data
     if (boysData.length === 0 && girlsData.length === 0) {
         html += '<div class="error-message">No results available for this sport</div>';
     }
