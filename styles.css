@@ -25,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ============ HOME PAGE HEADER ============ */
 .page-header-home {
     background: linear-gradient(135deg, rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url('file:///E:/website%20photo/college-bg.jpg') center/cover no-repeat;
     padding: 3rem 1.5rem;
@@ -56,7 +55,6 @@ body {
     margin: 0;
 }
 
-/* ============ SPORTS PAGE HEADER ============ */
 .page-header-sports {
     background: linear-gradient(135deg, rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url('file:///E:/website%20photo/sports-bg.jpg') center/cover no-repeat;
     padding: 2rem 1.5rem;
@@ -99,7 +97,6 @@ body {
     font-size: 1rem;
 }
 
-/* ============ CONTAINERS ============ */
 .home-container, .sports-page-container {
     min-height: 100vh;
     display: flex;
@@ -114,7 +111,6 @@ body {
     padding: 2rem 1.5rem;
 }
 
-/* ============ LEADERBOARD SECTION ============ */
 .leaderboard-section {
     background: rgba(30, 41, 59, 0.6);
     border: 1px solid rgba(251, 191, 36, 0.2);
@@ -447,7 +443,6 @@ body {
     margin: 1rem 0;
 }
 
-/* ============ FOOTER ============ */
 .footer {
     text-align: center;
     padding: 2rem 1.5rem;
@@ -462,7 +457,6 @@ body {
     margin: 0.5rem 0;
 }
 
-/* ============ ANIMATIONS ============ */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -474,7 +468,6 @@ body {
     }
 }
 
-/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
     .main-title {
         font-size: 1.8rem;
